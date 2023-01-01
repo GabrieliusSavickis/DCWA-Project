@@ -1,0 +1,41 @@
+<head>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        .Container {
+           padding-left: 20;
+        }
+
+        table,th,td {
+            border: 2px solid black
+        }
+    </style>
+</head>
+<body>
+    <div class="Container">
+        <h1>Departments</h1>
+        <br />
+        <table>
+            <tr>
+                <th>DID</th>
+                <th>Name</th>
+                <th>Budget</th>
+                <th>Location</th>
+                <th>Delete</th>
+            </tr>
+            <% for(let d of departments) {%>
+            <tr>
+                <td><%= d.did %></td>
+                <td><%= d.dname %></td>
+                <td><%= d.budget %></td>
+                <td><%= d.county %></td>
+                <td><a href="/departments/delete/<%= d.did %>">Delete</a></td>
+            </tr>
+            <% }%>
+        </table>
+        <br>
+        <a href="/">Home</a>
+    </div>
+</body>

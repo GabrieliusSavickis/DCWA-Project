@@ -1,0 +1,39 @@
+<head>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        .Container {
+           padding-left: 20;
+        }
+
+        table,th,td {
+            border: 2px solid black
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Container">
+        <h1>Add Employee (MongoDB)</h1>
+
+        <form action="/addEmployee" method="POST">
+            <label>EID:</label>
+            <input name="_id" type="text" /><br>
+
+            <label>Phone</label>
+            <input name="phone" type="number" /><br>
+
+            <label>Email</label>
+            <input name="email" type="text" inputmode="email" /><br>
+
+            <br>
+            <div class="ButtonHolder">
+                <input type="submit" value="Add" id="UpdateButton" />
+            </div>
+        </form>
+        <br>
+        <a href="/">Home</a>
+    </div>
+</body>

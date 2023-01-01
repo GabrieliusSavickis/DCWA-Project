@@ -1,0 +1,40 @@
+<head>
+    <style>
+        .Container {
+            padding-left: 20;
+        }
+    </style>
+</head>
+<body>
+    <div class="Container">
+        <h1>Edit Employee</h1>
+        <% if (errors!==undefined) {%>
+        <% for (let err of errors) {%>
+        <li><%= err.msg %></li>
+        <% }%>
+        <% }%>
+        <form action="/employees/edit/<%= e.eid %>" method="POST">
+            <label>EID:</label>
+            <input type="text" value="<%= e.eid %>" disabled /><br>
+
+            <label>Name</label>
+            <input name="name" type="text" value="<%= e.ename %>" /><br>
+
+            <label>Role:</label>
+            <select name="role">
+                <option value=""></option>
+                <option <%= e.role == 'Manager'  ? 'selected' :'' %> value="Manager">Manager</option>
+                <option <%= e.role == 'Employee' ? 'selected' :'' %> value="Employee">Employee</option>
+            </select><br>
+
+            <label>Salary</label>
+            <input name="salary" type="text" inputmode="numeric" value="<%= e.salary %>" /><br>
+            <br>
+            <div class="ButtonHolder">
+                <input type="submit" value="Update" id="UpdateButton" />
+            </div>
+        </form>
+        <br>
+        <a href="/employees">Home</a>
+    </div>
+</body>

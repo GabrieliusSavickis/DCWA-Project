@@ -1,0 +1,36 @@
+<head>
+    <style>
+        .Container {
+            padding-left: 20;
+        }
+
+        table,th,td {
+            border: 2px solid black
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Container">
+        <h1>Employees (MongoDB)</h1>
+        <a href="/addEmployee">Add Employee (MongoDB)</a>
+        <br />
+        <br />
+        <table>
+            <tr>
+                <th>EID</th>
+                <th>Phone</th>
+                <th>Email</th>
+            </tr>
+            <% for(let e of employees) {%>
+                <tr>
+                    <td><%= e._id %></td>
+                    <td><%= e.phone %></td>
+                    <td><%= e.email %></td>
+                </tr>
+                <% }%>
+        </table>
+        <br>
+        <a href="/">Home</a>
+    </div>
+</body>
